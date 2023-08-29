@@ -1,0 +1,19 @@
+nav {
+  background-color: #f1f1f1;
+  padding: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin-right: 20px;
+}
+
+hr {
+  margin: 20px 0;
+}

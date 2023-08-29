@@ -1,0 +1,19 @@
+<header>
+  <h1>Simple ECommerce App</h1>
+  <nav>
+    <ul>
+      <li><a href="#" (click)="toggleView('products')">Products list</a></li>
+      <li><a href="#" (click)="toggleView('cart')">Cart</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div *ngIf="show === 'products'">
+    <app-product-list></app-product-list>
+  </div>
+
+  <div *ngIf="show === 'cart'">
+    <app-cart></app-cart>
+  </div>
+</main>

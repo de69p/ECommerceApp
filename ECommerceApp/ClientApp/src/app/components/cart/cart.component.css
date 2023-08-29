@@ -1,0 +1,32 @@
+.cart-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow .3s ease-in-out;
+}
+
+.cart-item:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+button {
+  background: linear-gradient(to bottom, #FFF3E0, #FFE0B2);
+  color: #333;
+  padding: 12px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #FFE0B2, #FFF3E0);
+}
