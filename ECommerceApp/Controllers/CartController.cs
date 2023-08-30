@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyECommerceApp.Models;
 using MyECommerceApp.Services;
 
-namespace MyECommerceApp.Controllers;
+namespace ECommerceApp.Controllers;
 
 [ApiController]
 [Route("api/cart")]

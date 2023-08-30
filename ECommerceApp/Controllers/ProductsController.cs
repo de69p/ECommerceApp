@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyECommerceApp.Models;
 using MyECommerceApp.Services;
 
-namespace MyECommerceApp.Controllers;
+namespace ECommerceApp.Controllers;
 
 [ApiController]
 [Route("api/products")]
@@ -10,8 +10,11 @@ public class ProductController : ControllerBase
 {
     private readonly ProductService _productService;
 
-    public ProductController(ProductService productService)
+    private readonly ILogger<CartController> _logger;
+
+    public ProductController(ProductService productService, ILogger<CartController> logger)
     {
+        _logger = logger;
         _productService = productService;
     }
 
@@ -46,6 +49,7 @@ public class ProductController : ControllerBase
         {
             return Ok();
         }
+
         return NotFound();
     }
 
@@ -57,6 +61,7 @@ public class ProductController : ControllerBase
         {
             return Ok();
         }
+
         return NotFound();
     }
 }
