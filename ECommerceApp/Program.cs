@@ -1,5 +1,5 @@
-using MyECommerceApp.Models;
-using MyECommerceApp.Services;
+using ECommerceApp.Models;
+using ECommerceApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

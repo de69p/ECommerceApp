@@ -11,12 +11,20 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>('https://localhost:7113/api/products').pipe(
+  getProducts(type: string | null = null): Observable<Product[]> {
+    let url = 'https://localhost:7113/api/products';
+    if (type) {
+      url += `?type=${type}`;
+    }
+    return this.http.get<Product[]>(url).pipe(
       catchError(err => {
         console.error(err);
-        return throwError(() => err);  // use throwError here
+        return throwError(() => err);
       })
     );
   }
+
+
+
+
 }

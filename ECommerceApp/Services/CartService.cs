@@ -1,7 +1,7 @@
+using ECommerceApp.Models;
 using Microsoft.EntityFrameworkCore;
-using MyECommerceApp.Models;
 
-namespace MyECommerceApp.Services;
+namespace ECommerceApp.Services;
 
 public class CartService
 {

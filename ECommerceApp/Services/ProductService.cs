@@ -1,6 +1,6 @@
-using MyECommerceApp.Models;
+using ECommerceApp.Models;
 
-namespace MyECommerceApp.Services;
+namespace ECommerceApp.Services;
 
 public class ProductService
 {
@@ -19,10 +19,19 @@ public class ProductService
     }
 
     // Read
-    public IEnumerable<Product> GetProducts()
+    // Read
+    public IEnumerable<Product> GetProducts(string? type = null)
     {
-        return _dbContext.Products.ToList();
+        IQueryable<Product> query = _dbContext.Products;
+
+        if (!string.IsNullOrEmpty(type))
+        {
+            query = query.Where(p => p.Type == type);
+        }
+
+        return query.ToList();
     }
+
 
     // Read Single
     public Product GetProductById(int id)
@@ -30,6 +39,7 @@ public class ProductService
         return _dbContext.Products.Find(id);
     }
 
+    // Update
     // Update
     public bool UpdateProduct(int id, Product updatedProduct)
     {
@@ -39,11 +49,13 @@ public class ProductService
             existingProduct.Name = updatedProduct.Name;
             existingProduct.Price = updatedProduct.Price;
             existingProduct.Description = updatedProduct.Description;
+            existingProduct.Type = updatedProduct.Type;  
             _dbContext.SaveChanges();
             return true;
         }
         return false;
     }
+
 
     // Delete
     public bool DeleteProduct(int id)

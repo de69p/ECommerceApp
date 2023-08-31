@@ -1,6 +1,6 @@
+using ECommerceApp.Models;
+using ECommerceApp.Services;
 using Microsoft.AspNetCore.Mvc;
-using MyECommerceApp.Models;
-using MyECommerceApp.Services;
 
 namespace ECommerceApp.Controllers;
 

@@ -17,3 +17,15 @@ li {
 hr {
   margin: 20px 0;
 }
+
+.nav-button {
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: width 0.5s ease-in-out;
+}
+
+.nav-button:hover {
+  width: auto;
+}

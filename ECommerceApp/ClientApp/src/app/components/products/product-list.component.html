@@ -1,5 +1,14 @@
 <div class="product-list">
-  <h1>Product List</h1>
+  <h1 (mouseover)="showCategories = true" (mouseleave)="showCategories = false">
+    Product List
+    <div *ngIf="showCategories" class="categories-dropdown">
+      <ul>
+        <li (click)="filterProducts('Laptop')">Laptop</li>
+        <li (click)="filterProducts('Smartphone')">Smartphone</li>
+        <li (click)="filterProducts('TV')">TV</li>
+      </ul>
+    </div>
+  </h1>
   <div class="grid-container">
     <div *ngFor="let product of products" class="product-card">
       <h2>{{ product.name }}</h2>

@@ -10,9 +10,18 @@ import {CartService} from "../../services/cart.service";
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  showCategories = false;
 
   constructor(private productService: ProductService, private cartService: CartService) {
   }
+
+  filterProducts(type: string | null): void {
+    this.productService.getProducts(type).subscribe({
+      next: data => this.products = data,
+      error: () => alert('Failed to load products.')
+    });
+  }
+
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe({

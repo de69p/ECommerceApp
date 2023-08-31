@@ -1,6 +1,6 @@
+using ECommerceApp.Models;
+using ECommerceApp.Services;
 using Microsoft.AspNetCore.Mvc;
-using MyECommerceApp.Models;
-using MyECommerceApp.Services;
 
 namespace ECommerceApp.Controllers;
 
@@ -28,9 +28,9 @@ public class ProductController : ControllerBase
 
     // Read
     [HttpGet]
-    public ActionResult<IEnumerable<Product>> GetProducts()
+    public ActionResult<IEnumerable<Product>> GetProducts(string? type = null)
     {
-        return Ok(_productService.GetProducts());
+        return Ok(_productService.GetProducts(type));
     }
 
     // Read Single
